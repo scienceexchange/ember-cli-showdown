@@ -31,8 +31,6 @@ export default Ember.Component.extend({
 
     if (markdown instanceof Ember.Handlebars.SafeString) {
       source = markdown.toHTML();
-    } else if (Array.isArray(markdown)) {
-      source = markdown[0];
     } else {
       source = markdown;
     }
