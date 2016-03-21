@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-export function sample(params/*, hash*/) {
+export function simpleSubExpression(params/*, hash*/) {
   return params;
 }
 
-export default Ember.Helper.helper(sample);
+export default Ember.Helper.helper(simpleSubExpression);

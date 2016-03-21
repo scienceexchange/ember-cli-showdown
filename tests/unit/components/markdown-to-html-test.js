@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
+import helper from 'dummy/helpers/simple-sub-expression';
 
 moduleForComponent('markdown-to-html', 'Unit | Component | markdown to html', {
   unit: true
@@ -31,10 +32,11 @@ test('it produces markdown from a Handlebars sub-expression', function(assert) {
   assert.expect(2);
 
   var component = this.subject();
+  var subExpressionResult = helper.compute('##Hello, [world](#)');
   this.render();
 
   Ember.run(function() {
-    component.set('markdown', ['##Hello, [world](#)']);
+    component.set('markdown', subExpressionResult);
   });
 
   var expectedHtml = '<h2 id="helloworld">Hello, <a href="#">world</a></h2>';
